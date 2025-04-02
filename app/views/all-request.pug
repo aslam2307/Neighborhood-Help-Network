@@ -1,0 +1,19 @@
+extends layout
+block content
+    - console.log(data)
+    .main-content 
+    h1 Request 
+    table(border=1)
+        thead 
+            tr 
+                th Name 
+                th Request Type 
+                th Request Date 
+                th Request Location 
+        for item in data 
+            tr  
+                td 
+                    a(href=`/request_details/${item.User_ID}`) #{item.User_name}
+                td #{item.request_type}
+                td #{item.request_date}
+                td #{item.request_location}
