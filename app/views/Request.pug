@@ -1,0 +1,158 @@
+extends layout
+
+block content
+  style.
+    body {
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 50px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2d3e50;
+    }
+
+    nav a {
+      margin-left: 25px;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #2d3e50;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #e0f7fa;
+      color: #00aaff;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .main-content {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .main-content:hover {
+      box-shadow: 0 12px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      color: #2d3e50;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+
+    th {
+      background-color: #f7f7f7;
+      padding: 15px;
+      color: #495057;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    a {
+      color: #ff6f61;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff3b30;
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-top: 20px;
+      background-color: #00aaff;
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: #008c99;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px 0;
+      text-align: center;
+      background-color: #ffffff;
+      color: #666;
+      font-size: 14px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+  header
+    .logo NEIGHBOURHOOD
+    nav
+      a(href="/all_requests") Home
+      a(href="/about") About Us
+      a(href="/help") Help
+      a(href="/all_requests") Request
+      a(href="/my_neighbors") My Neighbors
+      a(href="/login") Logout
+
+  .main-content 
+    h1 Request 
+    table
+      thead 
+        tr 
+          th Name 
+          th Request Type 
+          th Request Date 
+          th Request Location 
+      for item in data 
+        tr  
+          td 
+            a(href=`/request_details/${item.User_ID}`) #{item.User_name}
+          td #{item.request_type}
+          td #{item.request_date}
+          td #{item.request_location}
+    a.button(href="/create_request") Create New Request
+
+  footer
+    | © 2025 neighbourhood. All rights reserved.
