@@ -1,0 +1,106 @@
+extends layout
+
+block content
+  style.
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 50px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2d3e50;
+    }
+
+    nav a {
+      margin-left: 25px;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #2d3e50;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #e0f7fa;
+      color: #00aaff;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      margin: 60px auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px 0;
+      text-align: center;
+      background-color: #ffffff;
+      color: #666;
+      font-size: 14px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+  header
+    .logo NEIGHBOURHOOD
+    nav
+      a(href="/all_requests") Home
+      a(href="/about") About Us
+      a(href="/help") Help
+      a(href="/all_requests") Request
+      a(href="/neighbors") My Neighbors
+      a(href="/login") Logout
+
+  .container
+    h2 Help Section
+    p Welcome to the Help section. If you have any questions or need support:
+    p You can contact us or raise a query with the details provided.
+
+    a.back-link(href="/all_requests") Back to Home
+
+  footer
+    | © 2025 neighbourhood. All rights reserved.
