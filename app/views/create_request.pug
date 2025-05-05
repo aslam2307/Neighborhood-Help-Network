@@ -1,0 +1,116 @@
+doctype html
+html
+  head
+    title Create Request
+    style.
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+        background-size: cover;
+        color: #fff;
+      }
+
+      .glass-form {
+        backdrop-filter: blur(14px);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px;
+        width: 420px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 1.8em;
+        color: #ffffffcc;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.95em;
+        color: #ffffffc7;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        font-size: 1em;
+        transition: background 0.3s ease;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #ffffff88;
+      }
+
+      input:focus,
+      textarea:focus {
+        background: rgba(255, 255, 255, 0.25);
+        outline: none;
+      }
+
+      textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #ff6ec4, #7873f5);
+        color: white;
+        font-weight: bold;
+        font-size: 1em;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      button:hover {
+        transform: scale(1.03);
+      }
+
+  body
+    .glass-form
+      h2 New Service Request
+      form(method="POST" action="/create_request")
+        label(for="user_name") Name:
+        input(type="text" name="user_name" id="user_name" placeholder="Jane Doe" required)
+
+        label(for="user_email") Email:
+        input(type="email" name="user_email" id="user_email" placeholder="jane@example.com" required)
+
+        label(for="request_type") Request Type:
+        input(type="text" name="request_type" id="request_type" placeholder="Feature Request" required)
+
+        label(for="request_date") Date:
+        input(type="date" name="request_date" id="request_date" required)
+
+        label(for="request_location") Location:
+        input(type="text" name="request_location" id="request_location" placeholder="NY Office" required)
+
+        label(for="summary") Summary:
+        textarea(name="summary" id="summary" placeholder="Tell us about your request..." required)
+
+        button(type="submit") Submit
