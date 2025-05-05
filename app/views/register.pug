@@ -1,0 +1,102 @@
+doctype html
+html
+  head
+    title Register
+    style.
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ACB6E5, #74ebd5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .register-container {
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 450px;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-weight: 500;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+      }
+
+      input:focus {
+        border-color: #5c9ded;
+        outline: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background-color: #5c9ded;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #477cd2;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        color: #5c9ded;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+  body
+    .register-container
+      h1 Create Account
+      form(method="POST", action="/register")
+        label(for="name") Name:
+        input(type="text", name="name", required)
+        label(for="email") Email:
+        input(type="email", name="email", required)
+        label(for="address") Address:
+        input(type="text", name="address", required)
+        label(for="contact") Contact:
+        input(type="text", name="contact", required)
+        label(for="password") Password:
+        input(type="password", name="password", required)
+        button(type="submit") Register
+      a(href="/login") Already have an account? Login
